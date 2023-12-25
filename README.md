@@ -88,9 +88,9 @@ This approach utilizes memorization to avoid redundant calculations, significant
 * Filling the table:
 Iterate through the table, filling each cell dp[i][j] using the following formula:
 if strings[i - 1] == strings[j - 1]:
-dp[i][j] = dp[i - 1][j - 1] + 1  # characters match, increment LCS length
+dp[i][j] = dp[i - 1][j - 1] + 1   characters match, increment LCS length
 else:
-dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])  # choose the longer LCS from excluding characters
+dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])   choose the longer LCS from excluding characters
 
 * Finding the longest subsequence:
   * The final entry dp[n][m] (where n and m are the lengths of the respective sequences) holds the length of the LCS for all sequences.
