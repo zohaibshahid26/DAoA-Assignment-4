@@ -9,7 +9,7 @@ Solutions:
 #### Approach:
 This algorithm prioritizes maximizing the value per coin at each step.
 ##### Steps:
-***
+**
 * Sort denominations: 
 * Order coins in descending order (highest value to lowest).
 * Iterate through denominations:
@@ -17,7 +17,7 @@ This algorithm prioritizes maximizing the value per coin at each step.
   While the remaining amount is greater than or equal to the current denomination's value, subtract that denomination from the remaining amount and add one to the coin count.
 * Check completion: If the remaining amount is zero after iterating through all denominations, return the coin count; otherwise, return -1.
 
-***
+**
 
 Example:
 
