@@ -1,0 +1,6 @@
+PakRupee,PKR
+9
+Rupees,1
+Rupees,5
+Rupees,4
+Rupees,7
