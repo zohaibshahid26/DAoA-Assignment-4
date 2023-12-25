@@ -6,7 +6,7 @@ Given a set of coin denominations (coins) and a target amount (amount), find the
 Solutions:
 
 # Greedy Algorithm (CCGreedy):
-Approach:
+# Approach:
 
 Greedy Choice: This algorithm prioritizes maximizing the value per coin at each step.
 Steps:
@@ -25,21 +25,14 @@ Iteration:
 10: 12 - 10 = 2, count = 2
 2: 2 - 2 = 0, count = 3
 
-Asymptotic Upper Bound:
+# Asymptotic Upper Bound:
 Time complexity: O(n log n) due to sorting, which dominates the loop iterations.
 Space complexity: O(1) as it only uses temporary variables.
 
-Pros:
-Simple and concise implementation.
-Fast runtime due to minimal operations.
 
-Cons:
-Not always optimal solution. May use more coins than the minimum possible.
-Sensitive to the order of denominations (sorting overhead).
+# Dynamic Programming (CCDP):
 
-Dynamic Programming (CCDP):
-
-Approach:
+# Approach:
 This method builds upon optimal sub-solutions to solve the entire problem.
 DP table: Creates a 2D table (dp), where dp[i][j] stores the minimum number of coins needed to make change for amount j using only the first i denominations.
 
@@ -53,3 +46,7 @@ This compares two possibilities:
 1) utilizing the previous solution without the current denomination;
 2) adding a coin of the current denomination and using the solution for the remaining amount.
 Solution: The final answer is stored in dp[n - 1][amount].
+
+# Asymptotic Upper Bound:
+Time complexity: O(n * amount) due to nested loops.
+Space complexity: O(n * amount) for the DP table.
