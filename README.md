@@ -5,7 +5,7 @@ Given a set of coin denominations (coins) and a target amount (amount), find the
 
 Solutions:
 
-Greedy Algorithm (CCGreedy):
+# Greedy Algorithm (CCGreedy):
 Approach:
 
 Greedy Choice: This algorithm prioritizes maximizing the value per coin at each step.
