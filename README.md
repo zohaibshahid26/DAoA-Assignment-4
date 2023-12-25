@@ -15,7 +15,7 @@ This algorithm prioritizes maximizing the value per coin at each step.
 * Iterate through denominations:
 * For each denomination:
   While the remaining amount is greater than or equal to the current denomination's value, subtract that denomination from the remaining amount and add one to the coin count.
-*Check completion: If the remaining amount is zero after iterating through all denominations, return the coin count; otherwise, return -1.
+* Check completion: If the remaining amount is zero after iterating through all denominations, return the coin count; otherwise, return -1.
 
 ***
 
