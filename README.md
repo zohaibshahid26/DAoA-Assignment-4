@@ -1,5 +1,5 @@
 # DAoA-Assignment-4
-# 1-Coin Change Problem
+## 1-Coin Change Problem
 Problem:
 Given a set of coin denominations (coins) and a target amount (amount), find the minimum number of coins needed to make exact change for that amount. If such a combination of coins doesn't exist, return -1.
 
