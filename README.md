@@ -53,3 +53,49 @@ If there is still INT_MAX on that index so it means that we cannot make that amo
 #### Asymptotic Upper Bound:
 Time complexity: O(n * amount) due to nested loops.
 Space complexity: O(n * amount) for the DP table.
+
+
+
+## 2- Longest Common Subsequence (LCS) with Recursion and Dynamic Programming
+Problem:
+Given multiple sequences (usually strings), the LCS problem asks for the longest subsequence that is common to all of them. This subsequence does not have to be continuous within any of the original sequences.
+Solving the Problem:
+
+### 1. Recursive Approach (LCSusingRecursion):
+
+This approach utilizes divide-and-conquer by splitting the problem into smaller subproblems based on comparing characters at the ends of the involved sequences.
+
+#### Base cases:
+If either sequence is empty, the LCS is an empty string (no common characters).
+#### Recursive cases:
+* If the last characters of both sequences match:
+* The current character is included in the LCS, and the problem recurses on the remaining substrings (excluding the last character).
+* If the last characters don't match:
+      * Two recursive calls are made:
+            Omit the last character from the first sequence and recurse with the remaining sequences.
+            Omit the last character from the second sequence and recurse with the remaining sequences.
+* Finding the longest subsequence:  The result of the recursion is the longest of the two subsequences obtained from the recursive calls.
+  
+### 2. Dynamic Programming Approach (LCSUsingDP):
+
+This approach utilizes memorization to avoid redundant calculations, significantly improving efficiency.
+
+#### Steps:
+* DP table:
+    A 2D table dp is created, where dp[i][j] stores the length of the LCS for the first i characters of the first sequence and the first j characters of the second sequence.
+
+* Initialize all entries in the first row and first column of dp to 0 (empty subsequences).
+* Filling the table:
+Iterate through the table, filling each cell dp[i][j] using the following formula:
+if strings[i - 1] == strings[j - 1]:
+dp[i][j] = dp[i - 1][j - 1] + 1  # characters match, increment LCS length
+else:
+dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])  # choose the longer LCS from excluding characters
+
+* Finding the longest subsequence:
+  * The final entry dp[n][m] (where n and m are the lengths of the respective sequences) holds the length of the LCS for all sequences.
+* Backtrack through the table from dp[n][m] to identify the characters included in the LCS based on the chosen values in each cell.
+  
+#### Aysmptotic Upperbounds:
+#### Recursion: Time complexity: O(2^n) due to exponential possibilities in the recursion tree and overlapping subproblems. Space complexity: O(n) for the recursion stack.
+#### Dynamic Programming: Time complexity: O(n * m) due to iterating through the DP table only once. Space complexity: O(n * m) for the DP table.
