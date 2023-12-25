@@ -45,7 +45,8 @@ dp[i][j] = min(dp[i - 1][j], dp[i][j - coins[i - 1]] + 1)
 This compares two possibilities:
 1) utilizing the previous solution without the current denomination;
 2) adding a coin of the current denomination and using the solution for the remaining amount.
-Solution: The final answer is stored in dp[n - 1][amount].
+Solution: The final answer is stored in dp[n - 1][amount] which will be the fewest no of coins required to make the required amount.
+If there is still INT_MAX on that index so it means that we cannot make that amount.
 
 # Asymptotic Upper Bound:
 Time complexity: O(n * amount) due to nested loops.
